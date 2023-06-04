@@ -1,18 +1,22 @@
 package com.employee.model;
 
+
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity
-@Table(name="employees")
+
+@Table //is a corresponding table that matches that entity in the database
+@Entity // for specifies class is an entity and is mapped to a database table. 
+
 public class Employee {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id;
+	private int id;
 	
 	private String firstName;
 	private String lastName;
@@ -20,7 +24,7 @@ public class Employee {
 	public Employee() {
 		
 	}
-	public Employee(long id, String firstName, String lastName, String emailId) {
+	public Employee(int id, String firstName, String lastName, String emailId) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -30,7 +34,7 @@ public class Employee {
 	public long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getFirstName() {
